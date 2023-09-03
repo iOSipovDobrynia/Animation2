@@ -11,55 +11,46 @@ import SpringAnimation
 final class AnimationViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet var springAnimationView: SpringView!
-    
-    @IBOutlet var presetLabel: UILabel!
-    @IBOutlet var curveLabel: UILabel!
-    @IBOutlet var forceLabel: UILabel!
-    @IBOutlet var durationLabel: UILabel!
-    @IBOutlet var delayLabel: UILabel!
-    
+    @IBOutlet var animationLabel: UILabel!
     @IBOutlet var runButton: UIButton!
     
     // MARK: - Private prop
-    private var currentParameters = Animation.getParameters()
+    private var currentAnimation = Animation.getRandomAnimation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateButton(with: currentParameters)
+        updateButton(with: currentAnimation)
     }
     
     // MARK: - IBActions
     @IBAction func runButtonPressed() {
         updateLabels()
-        let newParameters = Animation.getParameters()
+        let newAnimation = Animation.getRandomAnimation()
         
-        setupAnimation(with: newParameters)
-        
+        setupAnimation(with: newAnimation)
         springAnimationView.animate()
-        updateButton(with: newParameters)
-        currentParameters = newParameters
+        
+        updateButton(with: newAnimation)
+        
+        currentAnimation = newAnimation
     }
 }
 
 // MARK: - Private methods
 extension AnimationViewController {
     private func updateLabels() {
-        presetLabel.text = "Preset: \(currentParameters.animation)"
-        curveLabel.text = "Curve: \(currentParameters.curves)"
-        forceLabel.text = "Force: \(String(format: "%.2f", currentParameters.force))"
-        durationLabel.text = "Duration: \(String(format: "%.2f", currentParameters.duration))"
-        delayLabel.text = "Delay: \(String(format: "%.2f", currentParameters.delay))"
+        animationLabel.text = "\(currentAnimation.description)"
     }
     
-    private func updateButton(with parameters: Animation) {
-        runButton.setTitle("Run \(parameters.animation)", for: .normal)
+    private func updateButton(with animation: Animation) {
+        runButton.setTitle("Run \(animation.animation)", for: .normal)
     }
     
-    private func setupAnimation(with parameters: Animation) {
-        springAnimationView.animation = parameters.animation
-        springAnimationView.curve = parameters.curves
-        springAnimationView.force = parameters.force
-        springAnimationView.duration = parameters.duration
-        springAnimationView.delay = parameters.delay
+    private func setupAnimation(with animation: Animation) {
+        springAnimationView.animation = animation.animation
+        springAnimationView.curve = animation.curves
+        springAnimationView.force = animation.force
+        springAnimationView.duration = animation.duration
+        springAnimationView.delay = animation.delay
     }
 }
