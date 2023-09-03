@@ -13,7 +13,7 @@
 		E3ED17932A9BE51F00715C9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3ED17912A9BE51F00715C9C /* Main.storyboard */; };
 		E3ED17952A9BE52000715C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3ED17942A9BE52000715C9C /* Assets.xcassets */; };
 		E3ED17982A9BE52000715C9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3ED17962A9BE52000715C9C /* LaunchScreen.storyboard */; };
-		E3ED17A42A9BE5B200715C9C /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ED17A32A9BE5B200715C9C /* Parameters.swift */; };
+		E3ED17A42A9BE5B200715C9C /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ED17A32A9BE5B200715C9C /* Animation.swift */; };
 		E3ED17AB2A9BE76800715C9C /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = E3ED17AA2A9BE76800715C9C /* SpringAnimation */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 		E3ED17942A9BE52000715C9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3ED17972A9BE52000715C9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3ED17992A9BE52000715C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3ED17A32A9BE5B200715C9C /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		E3ED17A32A9BE5B200715C9C /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 		E3ED17A52A9BE5B600715C9C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E3ED17A32A9BE5B200715C9C /* Parameters.swift */,
+				E3ED17A32A9BE5B200715C9C /* Animation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,7 +200,7 @@
 				E3ED17902A9BE51F00715C9C /* AnimationViewController.swift in Sources */,
 				E3ED178C2A9BE51F00715C9C /* AppDelegate.swift in Sources */,
 				E3ED178E2A9BE51F00715C9C /* SceneDelegate.swift in Sources */,
-				E3ED17A42A9BE5B200715C9C /* Parameters.swift in Sources */,
+				E3ED17A42A9BE5B200715C9C /* Animation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

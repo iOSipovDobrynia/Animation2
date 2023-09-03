@@ -21,7 +21,7 @@ final class AnimationViewController: UIViewController {
     @IBOutlet var runButton: UIButton!
     
     // MARK: - Private prop
-    private var currentParameters = Parameters.getParameters()
+    private var currentParameters = Animation.getParameters()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +30,8 @@ final class AnimationViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func runButtonPressed() {
-        updateLabels(with: currentParameters)
-        let newParameters = Parameters.getParameters()
+        updateLabels()
+        let newParameters = Animation.getParameters()
         
         setupAnimation(with: newParameters)
         
@@ -43,19 +43,19 @@ final class AnimationViewController: UIViewController {
 
 // MARK: - Private methods
 extension AnimationViewController {
-    private func updateLabels(with parameters: Parameters) {
-        presetLabel.text = "Preset: \(parameters.animation)"
-        curveLabel.text = "Curve: \(parameters.curves)"
-        forceLabel.text = "Force: \(String(format: "%.2f", parameters.force))"
-        durationLabel.text = "Duration: \(String(format: "%.2f", parameters.duration))"
-        delayLabel.text = "Delay: \(String(format: "%.2f", parameters.delay))"
+    private func updateLabels() {
+        presetLabel.text = "Preset: \(currentParameters.animation)"
+        curveLabel.text = "Curve: \(currentParameters.curves)"
+        forceLabel.text = "Force: \(String(format: "%.2f", currentParameters.force))"
+        durationLabel.text = "Duration: \(String(format: "%.2f", currentParameters.duration))"
+        delayLabel.text = "Delay: \(String(format: "%.2f", currentParameters.delay))"
     }
     
-    private func updateButton(with parameters: Parameters) {
+    private func updateButton(with parameters: Animation) {
         runButton.setTitle("Run \(parameters.animation)", for: .normal)
     }
     
-    private func setupAnimation(with parameters: Parameters) {
+    private func setupAnimation(with parameters: Animation) {
         springAnimationView.animation = parameters.animation
         springAnimationView.curve = parameters.curves
         springAnimationView.force = parameters.force
